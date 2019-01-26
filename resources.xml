@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-    <env>
+    <envProperties>
         <hive_url>http://hive/</hive_url>
         <resource_manager_url>http://rm/default</resource_manager_url>
-    </env>
+    </envProperties>
     <oozieProperties>
 
     </oozieProperties>
