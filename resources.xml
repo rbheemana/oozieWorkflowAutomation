@@ -4,11 +4,27 @@
     <envProperties>
         <hive_url>http://hive/</hive_url>
         <resource_manager_url>http://rm/default</resource_manager_url>
+        <jobtracker>jobTracker={url}:8032</jobtracker>
+            <nameNode>hdfs://{url}:8020
+            <oozieNode>https://{url}:11443/oozie</oozieNode>
+            <impalaNode>hare1.putnaminv.com:21000
+            <impalaConnect>impala-shell --ssl -V -i {url} -k -u ${srvc_acct_login_ds_data_science} --quiet -B -q </impalaConnect>
+
+
+            <domainName>@<company>.COM
+            <hive2JDBC>jdbc:hive2://<url>:10000/default;</hive2JDBC>
+            <hive2Principal>hive/{url}</hive2Principal>
+            <hcatServer>thrift://{url}:9083</hcatServer>
+
+
+
     </envProperties>
     <oozieProperties>
 
     </oozieProperties>
     <sourceProperties>
+        <mysql></mysql>
+        <oracle></oracle>
 
     </sourceProperties>
 </properties>
