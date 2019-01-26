@@ -2,28 +2,34 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
     <envProperties>
-        <hive_url>http://hive/</hive_url>
-        <resource_manager_url>http://rm/default</resource_manager_url>
-        <jobtracker>jobTracker={url}:8032</jobtracker>
-            <nameNode>hdfs://{url}:8020</nameNode>
-            <oozieNode>https://{url}:11443/oozie</oozieNode>
-            <impalaNode>hare1.putnaminv.com:21000</impalaNode>
-            <impalaConnect>impala-shell --ssl -V -i {url} -k -u ${srvc_acct_login_ds_data_science} --quiet -B -q </impalaConnect>
-
-
-            <domainName>@${company}.COM</domainName>
-            <hive2JDBC>jdbc:hive2://{url}:10000/default;</hive2JDBC>
-            <hive2Principal>hive/{url}</hive2Principal>
-            <hcatServer>thrift://{url}:9083</hcatServer>
-
-
-
+        <hive_url>http://{hiveUrl}/</hive_url>
+        <resource_manager_url>http://{rm}/default</resource_manager_url>
+        <jobtracker>{url}:8032</jobtracker>
+        <nameNode>hdfs://{url}:8020</nameNode>
+        <oozieNode>https://{url}:11443/oozie</oozieNode>
+        <impalaNode>{impalaUrl}:21000</impalaNode>
+        <impalaConnect>impala-shell --ssl -V -i {url} -k -u ${srvc_acct_login_ds_data_science} --quiet -B -q
+        </impalaConnect>
+        <domainName>@${company}.COM</domainName>
+        <hive2JDBC>jdbc:hive2://{url}:10000/default;</hive2JDBC>
+        <hive2Principal>hive/{url}</hive2Principal>
+        <hcatServer>thrift://{url}:9083</hcatServer>
     </envProperties>
     <oozieProperties>
 
     </oozieProperties>
     <sourceProperties>
-        <mysql></mysql>
+        <mysql>
+            <jdbcUrl>jdbc:mysql://ms.itversity.com:3306</jdbcUrl>
+            <jdbcUsername>retail_user</jdbcUsername>
+            <jdbcPasswordFilePath>
+                hdfs://nn01.itversity.com:8030/user/padmakarmaddala/passwords/jdbc.txt
+            </jdbcPasswordFilePath>
+            <hdfsSqoopImportLocation>
+                hdfs://nn01.itversity.com:8030//user/padmakarmaddala/sqoop_import
+            </hdfsSqoopImportLocation>
+            <mappers>1</mappers>
+        </mysql>
         <oracle></oracle>
 
     </sourceProperties>
