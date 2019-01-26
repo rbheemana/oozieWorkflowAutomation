@@ -23,7 +23,7 @@
     </action>
 
     <kill name="fail">
-        <message>Sqoop failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+        <message>Sqoop failed,  error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
     </kill>
     <end name="end"/>
 </workflow-app>
