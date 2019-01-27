@@ -2,7 +2,7 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
     <envProperties>
-        <hive_url>http://{hiveUrl}/</hive_url>
+        <hiveUrl>http://{hiveUrl}/</hiveUrl>
         <resource_manager_url>http://{rm}/default</resource_manager_url>
         <jobtracker>{url}:8032</jobtracker>
         <nameNode>hdfs://{url}:8020</nameNode>
@@ -16,7 +16,6 @@
         <hcatServer>thrift://{url}:9083</hcatServer>
     </envProperties>
     <oozieProperties>
-
     </oozieProperties>
     <sourceProperties>
         <mysql>

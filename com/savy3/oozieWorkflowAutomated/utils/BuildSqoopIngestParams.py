@@ -4,15 +4,18 @@ import logging, os
 def writeJobProperties(jobPropertiesPath,dynamicDict):
     with open(jobPropertiesPath, 'w') as job:
         lines = list()
-        envProperties = PropertiesHelper.dictToPropString(PropertiesHelper.env)
+        envProperties = PropertiesHelper.dictToPropString(PropertiesHelper.envProperties)
         oozieProperties = PropertiesHelper.dictToPropString(PropertiesHelper.oozieProperties)
         dynamicProperties = PropertiesHelper.dictToPropString(dynamicDict)
         job.writelines(envProperties+"\n"+oozieProperties+"\n"+dynamicProperties)
 
 
-def buildAndWriteJobProperties(ingestType,source,tablename, dbname)
+def buildAndWriteJobProperties(ingestType,source,tablename, dbname):
     dynamicDict = dict()
     dynamicDict['query'] = SqoopParamsBuilder.buildSqoopActionParams(ingestType,source,tablename, dbname)
-    jobPropertiesPath = os.path.abspath("../../../../target/wf_sqoop_ingest/job.properties")
+    jobPropertiesPath = os.path.abspath("../../../target/wf_sqoop_ingest/job.properties")
     logging.info("Writing parameters to the path : %s", jobPropertiesPath)
     writeJobProperties(jobPropertiesPath, dynamicDict)
+
+# if __name__ == "__main__":
+#     print(PropertiesHelper.dictToPropString(PropertiesHelper.oozieProperties))

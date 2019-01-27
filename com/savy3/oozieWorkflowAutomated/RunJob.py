@@ -4,10 +4,8 @@ from com.savy3.oozieWorkflowAutomated.utils import BuildSqoopIngestParams
 
 
 def main():
-    #logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
     logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
     logging.info('Started')
-    from com.savy3.oozieWorkflowAutomated.utils import PropertiesHelper
     logging.info('Getting Properties...In Progress...')
     BuildSqoopIngestParams.buildAndWriteJobProperties('full','mysql','orders','retail_db')
     logging.info('Finished')
